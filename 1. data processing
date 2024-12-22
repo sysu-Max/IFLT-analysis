@@ -1,7 +1,0 @@
-~/software/bin/cellranger5 count \
---force-cells=15000 \
---id=Sample_ID \
---localcores=16 \
---transcriptome=~/reference_data/refdata-cellranger-GRCh38-3.0.0 \
---fastqs=~/CLT_IFLT/1.Rwadata \
---sample=Sample_name
