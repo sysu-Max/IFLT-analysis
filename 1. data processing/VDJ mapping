@@ -1,0 +1,13 @@
+#BSUB -n 16
+#BSUB -o Sample_name.our
+#BSUB -e Sample_name.err
+#BSUB -R span[hosts=1]
+##BSUB -q smp
+####BSUB -m c018
+
+/data/home/heshuai/software/bin/cellranger5 vdj \
+--id=Sample_name \
+--reference=/data/home/heshuai/reference_data/refdata-cellranger-vdj-GRCh38-alts-ensembl-5.0.0 \
+--fastqs=/data1/home/wanglh/CLT_IFLT/1.Rwadata \
+--sample=Sample_name \
+--localcores=16 \
