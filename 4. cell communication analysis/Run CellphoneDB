@@ -1,0 +1,18 @@
+#BSUB -n 16
+#BSUB -o subset_ID.out
+#BSUB -e subset_ID.err
+#BSUB -R span[hosts=1]
+#BSUB -q normal
+
+module load perl/5.32.0
+
+/data/home/heshuai/Miniconda3/bin/cellphonedb method statistical_analysis \
+       --project-name subset_ID	 \
+       --iterations 1000 \
+       --threshold 0.1 \
+       --result-precision 3 \
+       --output-path /data1/home/wanglh/CLT_IFLT/2.Analysis/merged/CellphoneDB/All/outpt \
+       --verbose \
+       --threads 16 \
+       /data1/home/wanglh/CLT_IFLT/2.Analysis/merged/CellphoneDB/All/subset_ID_meta.txt \
+       /data1/home/wanglh/CLT_IFLT/2.Analysis/merged/CellphoneDB/All/subset_ID_count.txt 
