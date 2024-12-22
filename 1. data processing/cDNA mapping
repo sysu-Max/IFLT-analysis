@@ -1,0 +1,15 @@
+#BSUB -n 16
+#BSUB -o Sample_name.our
+#BSUB -e Sample_name.err
+#BSUB -R span[hosts=1]
+##BSUB -q smp
+##BSUB -m c019
+
+/data/home/heshuai/software/bin/cellranger5 count \
+--force-cells=15000 \
+--id=Sample_name \
+--localcores=16 \
+--transcriptome=/data/home/heshuai/reference_data/refdata-cellranger-GRCh38-3.0.0 \
+--fastqs=/data1/home/wanglh/CLT_IFLT/1.Rwadata \
+--sample=Sample_name
+
