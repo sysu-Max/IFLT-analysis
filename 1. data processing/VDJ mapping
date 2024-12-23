@@ -5,9 +5,9 @@
 ##BSUB -q smp
 ####BSUB -m c018
 
-/data/home/heshuai/software/bin/cellranger5 vdj \
+~/software/bin/cellranger5 vdj \
 --id=Sample_name \
---reference=/data/home/heshuai/reference_data/refdata-cellranger-vdj-GRCh38-alts-ensembl-5.0.0 \
---fastqs=/data1/home/wanglh/CLT_IFLT/1.Rwadata \
+--reference=~/reference_data/refdata-cellranger-vdj-GRCh38-alts-ensembl-5.0.0 \
+--fastqs=~/CLT_IFLT/1.Rwadata \
 --sample=Sample_name \
 --localcores=16 \
