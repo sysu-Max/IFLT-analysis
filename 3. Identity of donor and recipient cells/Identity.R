@@ -22,55 +22,55 @@ library(circlize)
   
 ####----load data-----
 ###TCR
-D1_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D1/filtered_contig_annotations.csv')
-D2_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D2/filtered_contig_annotations.csv')
-D3_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D3/filtered_contig_annotations.csv')
-D4_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D4/filtered_contig_annotations.csv')
-D5_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D5/filtered_contig_annotations.csv')
-D6_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D6/filtered_contig_annotations.csv')
-D7_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D7/filtered_contig_annotations.csv')
-D8_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D8/filtered_contig_annotations.csv')
-D9_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D9/filtered_contig_annotations.csv')
-D10_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D10/filtered_contig_annotations.csv')
-D11_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D11/filtered_contig_annotations.csv')
-D12_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D12/filtered_contig_annotations.csv')
-D15_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D15/filtered_contig_annotations.csv')
-D16_TCR <- read.csv('D:/IFLT-CLT/2.Analysis/integrated/TCR/D16/filtered_contig_annotations.csv')
+D1_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D1/filtered_contig_annotations.csv')
+D2_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D2/filtered_contig_annotations.csv')
+D3_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D3/filtered_contig_annotations.csv')
+D4_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D4/filtered_contig_annotations.csv')
+D5_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D5/filtered_contig_annotations.csv')
+D6_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D6/filtered_contig_annotations.csv')
+D7_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D7/filtered_contig_annotations.csv')
+D8_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D8/filtered_contig_annotations.csv')
+D9_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D9/filtered_contig_annotations.csv')
+D10_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D10/filtered_contig_annotations.csv')
+D11_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D11/filtered_contig_annotations.csv')
+D12_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D12/filtered_contig_annotations.csv')
+D15_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D15/filtered_contig_annotations.csv')
+D16_TCR <- read.csv('~/IFLT-CLT/2.Analysis/integrated/TCR/D16/filtered_contig_annotations.csv')
 
 
 
 ###--barcode celltype--
-D1_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD1.csv',header = T)
+D1_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD1.csv',header = T)
 D1_barcode$cell_barcode <- str_split_fixed(D1_barcode$cell_barcode,pattern = '_',n = 2)[,2]
-D2_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD2.csv',header = T)
+D2_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD2.csv',header = T)
 D2_barcode$cell_barcode <- str_split_fixed(D2_barcode$cell_barcode,pattern = '_',n = 2)[,2]
 
-D3_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD3.csv',header = T)
+D3_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD3.csv',header = T)
 D3_barcode$cell_barcode <- str_split_fixed(D3_barcode$cell_barcode,pattern = '_',n = 2)[,2]
-D4_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD4.csv',header = T)
+D4_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD4.csv',header = T)
 D4_barcode$cell_barcode <- str_split_fixed(D4_barcode$cell_barcode,pattern = '_',n = 2)[,2]
 
-D5_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD5.csv',header = T)
+D5_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD5.csv',header = T)
 D5_barcode$cell_barcode <- str_split_fixed(D5_barcode$cell_barcode,pattern = '_',n = 2)[,2]
-D6_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD6.csv',header = T)
+D6_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD6.csv',header = T)
 D6_barcode$cell_barcode <- str_split_fixed(D6_barcode$cell_barcode,pattern = '_',n = 2)[,2]
 
-D7_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD7.csv',header = T)
+D7_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD7.csv',header = T)
 D7_barcode$cell_barcode <- str_split_fixed(D7_barcode$cell_barcode,pattern = '_',n = 2)[,2]
-D8_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD8.csv',header = T)
+D8_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD8.csv',header = T)
 D8_barcode$cell_barcode <- str_split_fixed(D8_barcode$cell_barcode,pattern = '_',n = 2)[,2]
 
-D9_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD9.csv',header = T)
+D9_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD9.csv',header = T)
 D9_barcode$cell_barcode <- str_split_fixed(D9_barcode$cell_barcode,pattern = '_',n = 2)[,2]
-D10_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD10.csv',header = T)
+D10_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD10.csv',header = T)
 D10_barcode$cell_barcode <- str_split_fixed(D10_barcode$cell_barcode,pattern = '_',n = 2)[,2]
 
-D11_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD11.csv',header = T)
+D11_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD11.csv',header = T)
 D11_barcode$cell_barcode <- str_split_fixed(D11_barcode$cell_barcode,pattern = '_',n = 2)[,2]
-D12_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD12.csv',header = T)
+D12_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD12.csv',header = T)
 D12_barcode$cell_barcode <- str_split_fixed(D12_barcode$cell_barcode,pattern = '_',n = 2)[,2]
 
-D16_barcode <- read.csv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD16.csv',header = T)
+D16_barcode <- read.csv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/csv/rawdataD16.csv',header = T)
 D16_barcode$cell_barcode <- str_split_fixed(D16_barcode$cell_barcode,pattern = '_',n = 2)[,2]
 
 
@@ -85,50 +85,50 @@ merged_barcode <- rbind(D1_barcode,D2_barcode,D3_barcode,D4_barcode,D5_barcode,D
 
 
 ####--tsv--
-D1_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D1clusters.tsv', col_names = T) %>% as.data.frame() #
-D2_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D2clusters.tsv', col_names = T) %>% as.data.frame() #
+D1_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D1clusters.tsv', col_names = T) %>% as.data.frame() #
+D2_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D2clusters.tsv', col_names = T) %>% as.data.frame() #
 D2_tsv <- D2_tsv[D2_tsv$assignment %in% c(0,1),]
 rownames(D2_tsv) <- 1:nrow(D2_tsv)
 
-D3_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D3clusters.tsv', col_names = T) %>% as.data.frame() #
-D4_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D4clusters.tsv', col_names = T) %>% as.data.frame() #
+D3_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D3clusters.tsv', col_names = T) %>% as.data.frame() #
+D4_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D4clusters.tsv', col_names = T) %>% as.data.frame() #
 D4_tsv <- D4_tsv[D4_tsv$assignment %in% c(0,1),]
 rownames(D4_tsv) <- 1:nrow(D4_tsv)
 
-D5_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D5clusters.tsv', col_names = T) %>% as.data.frame() #
-D6_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D6clusters.tsv', col_names = T) %>% as.data.frame() #
+D5_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D5clusters.tsv', col_names = T) %>% as.data.frame() #
+D6_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D6clusters.tsv', col_names = T) %>% as.data.frame() #
 D6_tsv <- D6_tsv[D6_tsv$assignment %in% c(0,1),]
 rownames(D6_tsv) <- 1:nrow(D6_tsv)
 
-D7_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D7clusters.tsv', col_names = T) %>% as.data.frame() #
-D8_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D8clusters.tsv', col_names = T) %>% as.data.frame() #
+D7_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D7clusters.tsv', col_names = T) %>% as.data.frame() #
+D8_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D8clusters.tsv', col_names = T) %>% as.data.frame() #
 D8_tsv <- D8_tsv[D8_tsv$assignment %in% c(0,1),]
 rownames(D8_tsv) <- 1:nrow(D8_tsv)
 
-D9_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D9clusters.tsv', col_names = T) %>% as.data.frame() #
-D10_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D10clusters.tsv', col_names = T) %>% as.data.frame() #
+D9_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D9clusters.tsv', col_names = T) %>% as.data.frame() #
+D10_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D10clusters.tsv', col_names = T) %>% as.data.frame() #
 D10_tsv <- D10_tsv[D10_tsv$assignment %in% c(0,1),]
 rownames(D10_tsv) <- 1:nrow(D10_tsv)
 
-D11_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D11clusters.tsv', col_names = T) %>% as.data.frame() #
-D12_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D12clusters.tsv', col_names = T) %>% as.data.frame() #
+D11_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D11clusters.tsv', col_names = T) %>% as.data.frame() #
+D12_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D12clusters.tsv', col_names = T) %>% as.data.frame() #
 D12_tsv <- D12_tsv[D12_tsv$assignment %in% c(0,1),]
 rownames(D12_tsv) <- 1:nrow(D12_tsv)
 
-D11_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D11clusters.tsv', col_names = T) %>% as.data.frame() #
-D12_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D12clusters.tsv', col_names = T) %>% as.data.frame() #
+D11_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D11clusters.tsv', col_names = T) %>% as.data.frame() #
+D12_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D12clusters.tsv', col_names = T) %>% as.data.frame() #
 D12_tsv <- D12_tsv[D12_tsv$assignment %in% c(0,1),]
 rownames(D12_tsv) <- 1:nrow(D12_tsv)
 
 
-D15_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D15clusters.tsv', col_names = T) %>% as.data.frame() #
-D16_tsv <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D16clusters.tsv', col_names = T) %>% as.data.frame() #
+D15_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D15clusters.tsv', col_names = T) %>% as.data.frame() #
+D16_tsv <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/tsv/D16clusters.tsv', col_names = T) %>% as.data.frame() #
 D16_tsv <- D16_tsv[D16_tsv$assignment %in% c(0,1),]
 rownames(D16_tsv) <- 1:nrow(D16_tsv)
 
 
 
-D1_2clusters <- read_tsv(file = 'D:/IFLT-CLT/2.Analysis/integrated/SNP/D1_D2/clusters.tsv', col_names = T) %>% as.data.frame()
+D1_2clusters <- read_tsv(file = '~/IFLT-CLT/2.Analysis/integrated/SNP/D1_D2/clusters.tsv', col_names = T) %>% as.data.frame()
 
 
 
