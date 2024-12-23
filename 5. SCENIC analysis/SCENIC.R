@@ -31,9 +31,9 @@ library(ComplexHeatmap)
 # 4. Formatting the targets from GENIE3/GRNBoost into co-expression modules.
 # 5. Select potential direct-binding targets (regulons) based on DNA-motif analysis (RcisTarget: TF motif analysis)
 
-setwd('/data1/home/wanglh/CLT_IFLT/2.Analysis/merged/Scenic/SNP')
+setwd('~/CLT_IFLT/2.Analysis/merged/Scenic/SNP')
 org <- "hgnc" # or hgnc, or dmel 
-dbDir <- "/data4/heshuai/RAW_data/1-SingleCell/3-HCA/3-analysis/8-reanalysis/All_singlet_data/" # RcisTarget databases location
+dbDir <- "~/RAW_data/1-SingleCell/3-HCA/3-analysis/8-reanalysis/All_singlet_data/" # RcisTarget databases location
 myDatasetTitle <- "IFLT" # choose a name for your analysis
 data(defaultDbNames)
 # scenicOptions@inputDatasetInfo$cellInfo <- "int/cellInfo.Rds"
@@ -43,9 +43,9 @@ saveRDS(scenicOptions, file = paste0("scenicOptions.Rds"))
 
 # ---load data
 # 1
-load(file = '/data1/home/wanglh/CLT_IFLT/2.Analysis/merged/Annotation_data.RData')
-donor_tsv <- openxlsx::read.xlsx('/data1/home/wanglh/CLT_IFLT/2.Analysis/merged/SNP/tsv/donor_tsv.xlsx')
-receptor_tsv <- openxlsx::read.xlsx('/data1/home/wanglh/CLT_IFLT/2.Analysis/merged/SNP/tsv/recipient_tsv.xlsx')
+load(file = '~/CLT_IFLT/2.Analysis/merged/Annotation_data.RData')
+donor_tsv <- openxlsx::read.xlsx('~/CLT_IFLT/2.Analysis/merged/SNP/tsv/donor_tsv.xlsx')
+receptor_tsv <- openxlsx::read.xlsx('~/CLT_IFLT/2.Analysis/merged/SNP/tsv/recipient_tsv.xlsx')
 
 subset_cells$plot_clusters <- subset_cells$new_clusters %>% as.character()
 subset_cells$time_point <- subset_cells$sample.group %>% as.character()
@@ -80,7 +80,7 @@ runGenie3(exprMat_filtered_log, scenicOptions)
 
 
 #############-----------------------------###################
-scenicOptions <- readRDS("/data1/home/wanglh/CLT_IFLT/2.Analysis/merged/Scenic/SNP/scenicOptions.Rds")
+scenicOptions <- readRDS("~/CLT_IFLT/2.Analysis/merged/Scenic/SNP/scenicOptions.Rds")
 scenicOptions@settings$verbose <- TRUE
 scenicOptions@settings$nCores <- 16
 scenicOptions@settings$seed <- 123
@@ -124,7 +124,7 @@ saveRDS(regulonAUC,file = "regulonAUC.rds")
 saveRDS(regulonActivity_byCellType_Scaled,file = "regulonActivity_byCellType_Scaled.rds")
 
 regulonActivity_byCellType_Scaled <- t(regulonActivity_byCellType_Scaled)
-png("cd4_C2_scenic_heatmap_1.png", res = 200,units = 'in',height = 10, width = 30)
+png("scenic_heatmap_1.png", res = 200,units = 'in',height = 10, width = 30)
 pheatmap::pheatmap(regulonActivity_byCellType_Scaled[,], #fontsize_row=3, 
                    color = colorRampPalette(c("#2166ac", "white", "#CC3333"))(100),
                    breaks = seq(-3, 3, length.out = 100),
@@ -143,7 +143,7 @@ pheatmap::pheatmap(regulonActivity_byCellType_Scaled[,], #fontsize_row=3,
 dev.off()
 
 write.csv(data.frame(tf_s = colnames(regulonActivity_byCellType_Scaled)),file = 'tf_s.csv',row.names = F)
-pdf("cd4_C2o_scenic_heatmap_1.pdf", height = 10, width = 30)
+pdf("scenic_heatmap_1.pdf", height = 10, width = 30)
 pheatmap::pheatmap(regulonActivity_byCellType_Scaled[,], #fontsize_row=3, 
                    color = colorRampPalette(c("#2166ac", "white", "#CC3333"))(100),
                    breaks = seq(-3, 3, length.out = 100),
