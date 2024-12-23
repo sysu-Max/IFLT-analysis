@@ -5,11 +5,11 @@
 ##BSUB -q smp
 ##BSUB -m c019
 
-/data/home/heshuai/software/bin/cellranger5 count \
+~/software/bin/cellranger5 count \
 --force-cells=15000 \
 --id=Sample_name \
 --localcores=16 \
---transcriptome=/data/home/heshuai/reference_data/refdata-cellranger-GRCh38-3.0.0 \
---fastqs=/data1/home/wanglh/CLT_IFLT/1.Rwadata \
+--transcriptome=~/reference_data/refdata-cellranger-GRCh38-3.0.0 \
+--fastqs=~/CLT_IFLT/1.Rwadata \
 --sample=Sample_name
 
