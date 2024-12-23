@@ -54,13 +54,13 @@ color_used <- c(pal_npg()(10),pal_igv()(9),pal_uchicago("light")(9),pal_futurama
 
 ###-----------------------1. the first clustering-----------------------####
 ags <- commandArgs(trailingOnly = T) # 导入lsf 脚本里面的参数
-setwd(paste0("/data1/home/wanglh/CLT_IFLT/2.Analysis"))
+setwd(paste0("~/CLT_IFLT/2.Analysis"))
 
 
 ##------------------------1). Read in all input expression matrices
 # Create and setup Seurat objects for each dataset 
 
-TenXdat <- Read10X(data.dir = paste0("/data1/home/wanglh/CLT_IFLT/3.Script", ags[1], "/outs/filtered_feature_bc_matrix/"))
+TenXdat <- Read10X(data.dir = paste0("~/CLT_IFLT/3.Script", ags[1], "/outs/filtered_feature_bc_matrix/"))
 TenXdat <- CreateSeuratObject(counts = TenXdat, min.cells = 0, min.features = 500, project = ags[1])
 
 ##------------------------2).remove the genes in minimal cells (>=0.1% total cells)
@@ -241,13 +241,13 @@ subset_cells <- FindVariableFeatures(object = subset_cells, nfeatures = 2000)
 subset_cells <- ScaleData(object = subset_cells, features = rownames(x = subset_cells), vars.to.regress = c("nCount_RNA", "percent.mito"))
 
 
-# save(list = "subset_cells", file = paste0("/data1/home/wanglh/CLT_IFLT/Contaminated_gene_removed_", ags[1], ".RData"))
+# save(list = "subset_cells", file = paste0("~/CLT_IFLT/Contaminated_gene_removed_", ags[1], ".RData"))
 subset_cells[["Sample_ID"]] <- ags[1]
 assign(ags[1], subset_cells)
 # 
 # dat <- list()
 ###it is so import that "list" args was used in save function.
-save(list = ags[1], file = paste0("/data1/home/wanglh/CLT_IFLT/Contaminated_gene_removed_", ags[1], ".RData"))
+save(list = ags[1], file = paste0("~/CLT_IFLT/Contaminated_gene_removed_", ags[1], ".RData"))
 
 
 
